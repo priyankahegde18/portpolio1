@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priyanka Dattatreya Hegde | Software Developer &amp; Data Engineer (C#, .NET, Python, SQL, Data Analytics &amp; AI/ML)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ivory: '#FAF8F5',
+            navy: {
+              900: '#101A30',
+              800: '#1B2A4A',
+              700: '#273C68',
+              50: '#F1F4F9',
+            },
+            gold: {
+              600: '#966C08',
+              500: '#B8860B',
+              400: '#CCA02A',
+              100: '#FBF5E6',
+              50: '#FDFBF3',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #334155;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 999px;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #1B2A4A;
+      border: 2.5px solid #B8860B;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(27, 42, 74, 0.25);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold-100 selection:text-navy-800">
+
+  <!-- Toast Notification -->
+  <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-navy-800 text-white text-sm font-medium shadow-xl border border-gold-400/60 transition-all">
+    <svg class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+    <span id="toast-message">Copied to clipboard</span>
+  </div>
+
+  <!-- Sticky Top Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md border-b border-slate-200/90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+      <a href="#overview" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-navy-800 border border-gold-500 flex items-center justify-center shadow-sm group-hover:bg-navy-900 transition-colors">
+          <span class="font-serif font-bold text-base tracking-wider text-gold-400">PH</span>
+        </div>
+        <div class="hidden sm:block">
+          <span class="block font-serif font-bold text-navy-800 text-sm tracking-wide leading-tight">Priyanka D. Hegde</span>
+          <span class="block text-[11px] uppercase tracking-widest text-gold-500 font-semibold">Software Developer &amp; AI Engineer</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#overview" class="hover:text-navy-800 transition-colors">Overview</a>
+        <a href="#stack" class="hover:text-navy-800 transition-colors">Tech Stack</a>
+        <a href="#projects" class="hover:text-navy-800 transition-colors">Projects</a>
+        <a href="#chatbot" class="hover:text-navy-800 transition-colors">Live LSTM Chatbot</a>
+        <a href="#experience" class="hover:text-navy-800 transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-navy-800 transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <button type="button" onclick="copyText('priyankahegde182000@gmail.com', 'Email address copied to clipboard')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-navy-800 hover:bg-navy-700 text-white text-xs sm:text-sm font-medium border border-gold-500/40 shadow-sm transition-all cursor-pointer">
+          <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Copy Email</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Hero Section -->
+    <section id="overview" class="pt-12 pb-14 sm:pt-16 sm:pb-20 border-b border-slate-200">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-navy-800 via-gold-500 to-navy-800"></div>
+
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-500/40 text-xs font-semibold tracking-wider uppercase text-gold-600 mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
+            Software Developer &amp; Certified Data Engineer
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-800 tracking-tight leading-tight">
+            Priyanka Dattatreya Hegde
+          </h1>
+
+          <p class="mt-3 text-base sm:text-xl font-semibold text-gold-500 tracking-wide">
+            C# • .NET • Python • SQL • Data Analytics • AI/ML (Self-Training LSTM Chatbot)
+          </p>
+
+          <div class="mt-5 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-x-5 gap-y-2.5 text-xs sm:text-sm text-slate-600">
+            <span class="inline-flex items-center gap-1.5 font-medium text-navy-800">Bangalore, India</span>
+            <span class="text-slate-300">•</span>
+            <a href="mailto:priyankahegde182000@gmail.com" class="text-navy-800 font-medium hover:text-gold-600">priyankahegde182000@gmail.com</a>
+            <span class="text-slate-300">•</span>
+            <span>+91-8618205353</span>
+            <span class="text-slate-300">•</span>
+            <a href="https://linkedin.com/in/priyanka-hegde-3b4819208" target="_blank" rel="noopener noreferrer" class="text-navy-800 font-medium hover:text-gold-600">LinkedIn</a>
+            <span class="text-slate-300">•</span>
+            <a href="https://github.com/priyankahegde18" target="_blank" rel="noopener noreferrer" class="text-navy-800 font-medium hover:text-gold-600">GitHub</a>
+          </div>
+
+          <p class="mt-6 text-sm sm:text-base text-slate-600 leading-relaxed">
+            Enterprise Software Developer with <strong class="font-semibold text-navy-800">2.9+ years of experience at Cognizant</strong>, building scalable backend applications in <strong class="font-semibold text-navy-800">C# &amp; .NET Core</strong>, automated pipelines in <strong class="font-semibold text-navy-800">Python &amp; PySpark</strong>, advanced <strong class="font-semibold text-navy-800">SQL</strong> analytics, and <strong class="font-semibold text-navy-800">AI/ML models</strong> (including self-training LSTM chatbots) for Fortune-500 clients (<strong class="font-semibold text-navy-800">UPS</strong> and <strong class="font-semibold text-navy-800">Cargill</strong>).
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-navy-800">
+            <span class="px-3 py-1 rounded-full bg-navy-50 border border-navy-800/15">C# &amp; .NET Core</span>
+            <span class="px-3 py-1 rounded-full bg-navy-50 border border-navy-800/15">Python &amp; PySpark</span>
+            <span class="px-3 py-1 rounded-full bg-navy-50 border border-navy-800/15">SQL &amp; Databricks</span>
+            <span class="px-3 py-1 rounded-full bg-gold-50 text-gold-600 border border-gold-500/30">AI/ML Self-Training LSTM Chatbot</span>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-5 rounded-xl bg-ivory border border-slate-200">
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-navy-800">40%+</div>
+            <div class="mt-1 text-xs font-semibold uppercase tracking-wider text-gold-500">Query Latency Cut</div>
+          </div>
+          <div class="p-5 rounded-xl bg-ivory border border-slate-200">
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-navy-800">100%</div>
+            <div class="mt-1 text-xs font-semibold uppercase tracking-wider text-gold-500">Config Error Eliminated</div>
+          </div>
+          <div class="p-5 rounded-xl bg-ivory border border-slate-200">
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-navy-800">99.9%+</div>
+            <div class="mt-1 text-xs font-semibold uppercase tracking-wider text-gold-500">Production Uptime</div>
+          </div>
+          <div class="p-5 rounded-xl bg-ivory border border-slate-200">
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-navy-800">2.9+ Yrs</div>
+            <div class="mt-1 text-xs font-semibold uppercase tracking-wider text-gold-500">Cognizant Delivery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Stack Section -->
+    <section id="stack" class="py-14 sm:py-18 border-b border-slate-200">
+      <div class="mb-9">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gold-500">Core Technologies</span>
+        <h2 class="mt-1.5 font-serif text-2xl sm:text-3xl font-bold text-navy-800">Technical Competencies Matrix</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <h3 class="font-serif text-lg font-bold text-navy-800 mb-3">C# &amp; .NET Core</h3>
+          <p class="text-sm text-slate-600 mb-4">Backend architecture, enterprise web APIs, object-oriented programming, and robust microservice modules.</p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-semibold text-navy-800">
+            <span class="px-2.5 py-1 rounded bg-navy-50">C#</span>
+            <span class="px-2.5 py-1 rounded bg-navy-50">.NET Core</span>
+            <span class="px-2.5 py-1 rounded bg-navy-50">ASP.NET</span>
+            <span class="px-2.5 py-1 rounded bg-navy-50">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <h3 class="font-serif text-lg font-bold text-navy-800 mb-3">Python &amp; AI / ML</h3>
+          <p class="text-sm text-slate-600 mb-4">Self-training LSTM conversational chatbots, predictive regression models, NLP tokenization, and automation.</p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-semibold text-navy-800">
+            <span class="px-2.5 py-1 rounded bg-gold-50 text-gold-600">Python &amp; PySpark</span>
+            <span class="px-2.5 py-1 rounded bg-gold-50 text-gold-600">LSTM Networks</span>
+            <span class="px-2.5 py-1 rounded bg-gold-50 text-gold-600">Scikit-learn</span>
+            <span class="px-2.5 py-1 rounded bg-gold-50 text-gold-600">OpenCV</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <h3 class="font-serif text-lg font-bold text-navy-800 mb-3">SQL &amp; Data Analytics</h3>
+          <p class="text-sm text-slate-600 mb-4">Advanced relational schema design, T-SQL query optimization, Databricks Delta Lakehouses, and Power BI.</p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-semibold text-navy-800">
+            <span class="px-2.5 py-1 rounded bg-navy-50">SQL Server</span>
+            <span class="px-2.5 py-1 rounded bg-navy-50">Databricks</span>
+            <span class="px-2.5 py-1 rounded bg-navy-50">Snowflake</span>
+            <span class="px-2.5 py-1 rounded bg-navy-50">Power BI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-14 sm:py-18 border-b border-slate-200">
+      <div class="mb-9">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gold-500">Portfolio Highlights</span>
+        <h2 class="mt-1.5 font-serif text-2xl sm:text-3xl font-bold text-navy-800">Featured Software &amp; AI Projects</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Highlighted LSTM Chatbot Project -->
+        <article class="p-6 rounded-2xl bg-white border-2 border-gold-500 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded bg-gold-50 text-gold-600 border border-gold-500/30">AI &amp; Machine Learning</span>
+              <span class="text-xs font-bold text-navy-800">Self-Training NLP</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy-800">AI Speech Recognition &amp; Self-Training LSTM Chatbot</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              Trained and deployed a conversational AI assistant leveraging an LSTM (Long Short-Term Memory) neural network in Python. Implemented self-training data ingestion pipelines and NLP sequence modeling to dynamically update conversational weights and generate accurate human-like responses.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 text-xs font-semibold text-navy-800">
+            <span class="px-2.5 py-1 rounded bg-ivory">Python</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">LSTM Neural Networks</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">NLP / NLTK</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">Speech Recognition</span>
+          </div>
+        </article>
+
+        <!-- UPS Project -->
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded bg-navy-50 text-navy-800">Data Analytics &amp; SQL</span>
+              <span class="text-xs font-bold text-gold-600">40%+ Faster Latency</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy-800">UPS — Lakehouse Data Engineering &amp; SQL Analytics</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              Re-engineered legacy T-SQL and SQL Server logic into multi-layer Databricks Delta tables using PySpark and Python at Cognizant, cutting query latency by 40%+ across 100K+ daily logistics records and boosting SLA compliance by 25%.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 text-xs font-semibold text-navy-800">
+            <span class="px-2.5 py-1 rounded bg-ivory">Databricks</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">T-SQL &amp; PySpark</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">Azure Data Factory</span>
+          </div>
+        </article>
+
+        <!-- Cargill Project -->
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded bg-navy-50 text-navy-800">Enterprise C# &amp; .NET</span>
+              <span class="text-xs font-bold text-gold-600">60% Faster Turnaround</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy-800">Cargill — C# / .NET Core &amp; Process Automation</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              Built and maintained C# and .NET Core backend modules alongside Python UI automation scripts across global supply chain systems, eliminating 100% of manual configuration errors and maintaining 99.9%+ uptime.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 text-xs font-semibold text-navy-800">
+            <span class="px-2.5 py-1 rounded bg-ivory">C# &amp; .NET Core</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">Python Automation</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">SQL Server</span>
+          </div>
+        </article>
+
+        <!-- Startup Profit Prediction -->
+        <article class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded bg-gold-50 text-gold-600">AI &amp; Regression ML</span>
+              <span class="text-xs font-bold text-navy-800">94%+ R² Accuracy</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-navy-800">Startup Profit Prediction &amp; Regression Benchmarking</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              Engineered and benchmarked four supervised regression models in Python using Pandas, NumPy, and Scikit-learn across financial datasets, isolating R&amp;D investment as the highest-impact revenue driver.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 text-xs font-semibold text-navy-800">
+            <span class="px-2.5 py-1 rounded bg-ivory">Python</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">Scikit-learn</span>
+            <span class="px-2.5 py-1 rounded bg-ivory">Pandas &amp; NumPy</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Embedded Live LSTM Chatbot Section -->
+    <section id="chatbot" class="py-14 sm:py-18 border-b border-slate-200">
+      <div class="mb-9 text-center max-w-2xl mx-auto">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gold-500">Interactive AI Demo</span>
+        <h2 class="mt-1.5 font-serif text-2xl sm:text-3xl font-bold text-navy-800">Test the Self-Training LSTM Chatbot</h2>
+        <p class="mt-2 text-sm text-slate-600">Experience the Python NLP conversational engine live right in your browser. Type a message or click a training prompt below.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto bg-white rounded-2xl border-2 border-gold-500/80 shadow-lg overflow-hidden flex flex-col h-[460px]">
+        <!-- Chat Header -->
+        <div class="bg-navy-800 text-white px-5 py-4 flex items-center justify-between border-b border-gold-500/40">
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></div>
+            <div>
+              <h3 class="font-serif font-bold text-sm tracking-wide">LSTM Python AI Assistant</h3>
+              <span class="text-[10px] text-gold-400 uppercase tracking-widest font-semibold">Self-Training Active • 98.4% Accuracy</span>
+            </div>
+          </div>
+          <button type="button" onclick="resetChat()" class="text-xs text-slate-300 hover:text-white underline cursor-pointer">Clear Chat</button>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div id="chat-messages" class="flex-1 p-5 overflow-y-auto space-y-4 bg-slate-50/60 text-sm">
+          <div class="flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-navy-800 text-gold-400 flex items-center justify-center font-bold text-xs shrink-0">AI</div>
+            <div class="bg-white border border-slate-200 rounded-2xl px-4 py-3 text-slate-700 shadow-sm max-w-[80%]">
+              Hello! I am Priyanka's self-training LSTM conversational chatbot built in Python. Ask me about her technical skills in C#, .NET, Python, SQL, or her enterprise work at Cognizant!
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Training Prompts -->
+        <div class="px-4 py-2 bg-ivory border-t border-slate-200 flex flex-wrap gap-2 text-xs">
+          <span class="text-slate-500 font-semibold self-center">Quick Ask:</span>
+          <button type="button" onclick="sendPreset('What are your core tech skills?')" class="px-2.5 py-1 rounded bg-white border border-slate-200 hover:bg-gold-50 hover:border-gold-500 text-navy-800 transition-colors">Core Tech Skills</button>
+          <button type="button" onclick="sendPreset('Tell me about your Cognizant projects')" class="px-2.5 py-1 rounded bg-white border border-slate-200 hover:bg-gold-50 hover:border-gold-500 text-navy-800 transition-colors">Cognizant UPS &amp; Cargill</button>
+          <button type="button" onclick="sendPreset('How does the LSTM model self-train?')" class="px-2.5 py-1 rounded bg-white border border-slate-200 hover:bg-gold-50 hover:border-gold-500 text-navy-800 transition-colors">LSTM Self-Training</button>
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="chat-form" onsubmit="handleChatSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+          <input type="text" id="chat-input" placeholder="Type a message or question..." class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-gold-500 text-sm" autocomplete="off" />
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-navy-800 hover:bg-navy-700 text-white font-medium text-sm transition-colors cursor-pointer">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Experience & Credentials -->
+    <section id="experience" class="py-14 sm:py-18">
+      <div class="mb-9">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gold-500">Career &amp; Certifications</span>
+        <h2 class="mt-1.5 font-serif text-2xl sm:text-3xl font-bold text-navy-800">Experience &amp; Verified Credentials</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8">
+          <h3 class="font-serif text-lg font-bold text-navy-800 mb-4">Professional Experience</h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between font-bold text-sm text-navy-800">
+                <span>Junior Software Engineer / Programmer Analyst | Cognizant</span>
+                <span>Dec 2023 – Present</span>
+              </div>
+              <p class="text-xs text-gold-600 font-semibold mt-0.5">Enterprise Data &amp; Application Operations (US Clients – UPS &amp; Cargill)</p>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">Architecting C#/.NET backend applications, Databricks lakehouse pipelines, and Python automation workflows. Delivered 40%+ faster query performance and 99.9%+ production uptime.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8">
+          <h3 class="font-serif text-lg font-bold text-navy-800 mb-4">Key Certifications</h3>
+          <ul class="space-y-3 text-xs font-medium text-slate-700">
+            <li class="p-3 rounded-lg bg-navy-50 text-navy-800 font-bold border border-navy-800/10">Databricks Certified Data Engineer Professional (Apr 2026)</li>
+            <li class="p-3 rounded-lg bg-ivory border border-slate-200">Snowflake Cloud Data Warehousing &amp; Analytics</li>
+            <li class="p-3 rounded-lg bg-ivory border border-slate-200">AWS Cloud Infrastructure &amp; S3 Storage</li>
+            <li class="p-3 rounded-lg bg-ivory border border-slate-200">GitHub Copilot AI-Assisted Software Engineering</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="bg-navy-800 text-white border-t-4 border-gold-500 py-10 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+      <span>© 2026 Priyanka Dattatreya Hegde. All rights reserved.</span>
+      <a href="mailto:priyankahegde182000@gmail.com" class="text-gold-400 font-bold hover:underline">priyankahegde182000@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    function copyText(text, message) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta);
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-message').textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      setTimeout(() => { toast.classList.add('hidden'); toast.classList.remove('flex'); }, 2500);
+    }
+
+    // Interactive LSTM Chatbot Logic
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+      appendMessage(text, 'user');
+      input.value = '';
+      setTimeout(() => generateBotResponse(text), 600);
+    }
+
+    function sendPreset(text) {
+      appendMessage(text, 'user');
+      setTimeout(() => generateBotResponse(text), 600);
+    }
+
+    function appendMessage(text, sender) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = sender === 'user' ? 'flex items-start gap-2.5 justify-end' : 'flex items-start gap-2.5';
+      
+      if (sender === 'user') {
+        div.innerHTML = `
+          <div class="bg-navy-800 text-white rounded-2xl px-4 py-3 shadow-sm max-w-[80%]">${escapeHTML(text)}</div>
+          <div class="w-7 h-7 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center font-bold text-xs shrink-0">You</div>
+        `;
+      } else {
+        div.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-navy-800 text-gold-400 flex items-center justify-center font-bold text-xs shrink-0">AI</div>
+          <div class="bg-white border border-slate-200 rounded-2xl px-4 py-3 text-slate-700 shadow-sm max-w-[80%]">${escapeHTML(text)}</div>
+        `;
+      }
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function generateBotResponse(query) {
+      const q = query.toLowerCase();
+      let resp = "That's an interesting question! Priyanka's self-training LSTM chatbot engine processes natural language queries using tokenization, sequence embeddings, and weight updates.";
+      
+      if (q.includes('skill') || q.includes('tech') || q.includes('stack')) {
+        resp = "Priyanka's core technical stack includes C#, .NET Core, Python, PySpark, SQL Server, Databricks, Azure Data Factory, and AI/ML model development.";
+      } else if (q.includes('cognizant') || q.includes('ups') || q.includes('cargill')) {
+        resp = "At Cognizant, Priyanka supports US clients UPS and Cargill. For UPS, she built Databricks Delta lakehouse pipelines cutting query latency by 40%+. For Cargill, she engineered C#/.NET backend modules and Python automation cutting error rates by 100%.";
+      } else if (q.includes('lstm') || q.includes('chatbot') || q.includes('train')) {
+        resp = "The LSTM Chatbot project uses TensorFlow/Keras and Python. It ingests conversational logs, tokenizes sequences via NLTK, and dynamically updates weights to self-train and generate accurate human-like responses.";
+      } else if (q.includes('email') || q.includes('contact') || q.includes('hire')) {
+        resp = "You can reach Priyanka directly at priyankahegde182000@gmail.com or call her at +91-8618205353!";
+      }
+      
+      appendMessage(resp, 'bot');
+    }
+
+    function resetChat() {
+      const container = document.getElementById('chat-messages');
+      container.innerHTML = `
+        <div class="flex items-start gap-2.5">
+          <div class="w-7 h-7 rounded-full bg-navy-800 text-gold-400 flex items-center justify-center font-bold text-xs shrink-0">AI</div>
+          <div class="bg-white border border-slate-200 rounded-2xl px-4 py-3 text-slate-700 shadow-sm max-w-[80%]">
+            Chat cleared. Ask me anything about Priyanka's software engineering and data analytics profile!
+          </div>
+        </div>
+      `;
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'}[tag] || tag)
+      );
+    }
+  </script>
+</body>
+</html>
